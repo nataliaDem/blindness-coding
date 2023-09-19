@@ -1,0 +1,10 @@
+{
+  "name": "blindness-coding",
+  "private": true,
+  "dependencies": {
+    "browser-sync": "2.24.1"
+  },
+  "scripts": {
+    "start": "browser-sync start --server --files '*.css, *.html' --no-open --no-ui --tunnel"
+  }
+}
