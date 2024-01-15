@@ -42,34 +42,9 @@ const pins = [
 ];
 
 function showPins() {
-    pins.forEach(pinData => {
-        const pin = document.createElement('div');
-        pin.classList.add('pin', pinData.size);
-        pin.style.left = pinData.left;
-        pin.style.top = pinData.top;
 
-        document.getElementById('map').appendChild(pin);
-    });
 }
 
 function showMyPin() {
-    const pin = document.getElementById('myPin');
-    const map = document.getElementById('map');
 
-    pin.style.display = 'block';
-    pin.style.left = '-30px';
-    pin.style.top = "0px";
-
-    setTimeout(() => {
-        pin.style.left = '300px';
-        pin.style.top = '70px';
-    }, 100);
 }
-
-window.addEventListener('message', function(event) {
-    if (event.data === 'clickButton') {
-        showMyPin()
-    }
-});
-
-window.addEventListener('DOMContentLoaded', showPins);
