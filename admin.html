@@ -60,16 +60,17 @@
                 devhouse
             </div>
             <button class="btn btn-link" id="show-hide">Show/hide names</button>
+            <button class="btn" id="show-pin">Show pins!</button>
         </div>
     </div>
     <div class="d-flex flex-wrap justify-content-center">
         <div class="column">
             <span class="participant-name">Natalia</span>
-            <iframe src="https://loose-views-pump.loca.lt/"></iframe>
+            <iframe src="https://natalia.loca.lt"></iframe>
         </div>
         <div class="column">
-            <span class="participant-name"></span>
-            <iframe src=""></iframe>
+            <span class="participant-name">Natalia</span>
+            <iframe src="https://natalia.loca.lt"></iframe>
         </div>
         <div class="column">
             <span class="participant-name"></span>
@@ -108,6 +109,12 @@
             el.style.display = isDisplayed ? "none" : "inline-block"
         });
         isDisplayed = !isDisplayed;
+    });
+
+    document.querySelector("#show-pin").addEventListener('click', () => {
+        document.querySelectorAll('iframe').forEach(iframe => {
+            iframe.contentWindow.postMessage('clickButton', '*');
+        });
     })
 </script>
 </body>
